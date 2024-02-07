@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+read n < graph.txt
+
+for (( i=0; i<n; ++i )) do
+   ./worker $n $i &
+done

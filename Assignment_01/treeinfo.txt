@@ -1,0 +1,21 @@
+Ahmedabad 0
+Bengaluru 2 Hyderabad Vijayawada
+Bhubaneshwar 0
+Chandigarh 0
+Chennai 1 Pondicherry
+Delhi 3 Mumbai Chandigarh Kanpur
+Goa 0
+Guwahati 1 Imphal
+Hyderabad 1 Kochi
+Imphal 0
+Indore 0
+Jaipur 0
+Kanpur 3 Indore Raipur Patna
+Kochi 1 Goa
+Kolkata 2 Guwahati Bhubaneshwar
+Mumbai 4 Kolkata Ahmedabad Chennai Bengaluru
+Patna 1 Ranchi
+Pondicherry 0
+Raipur 1 Jaipur
+Ranchi 0
+Vijayawada 0
