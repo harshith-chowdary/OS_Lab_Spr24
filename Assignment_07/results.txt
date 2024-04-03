@@ -1,0 +1,81 @@
+ [~/OS Lab/Assignment_07]
+ ✘  harshith   master - bzr@1 ✚   make run
+gcc -shared -Wall -o libfoothread.so foothread.o
+gcc -Wall -g -Wl,-rpath=. -I. -L. -o computesum computesum.c -lfoothread
+./computesum
+Reading values for leaf nodes:
+Enter value for node 0: 1
+Node 0 value: 1
+Enter value for node 4: 4
+Node 4 value: 4
+Enter value for node 7: 5
+Node 7 value: 5
+Enter value for node 10: 7
+Node 10 value: 7
+Enter value for node 11: 89
+Node 11 value: 89
+Enter value for node 12: 5
+Node 12 value: 5
+Enter value for node 15: 75
+Node 15 value: 75
+Enter value for node 16: 2
+Node 16 value: 2
+Enter value for node 18: 7
+Node 18 value: 7
+Enter value for node 19: 6
+Node 19 value: 6
+Enter value for node 20: 8
+Node 20 value: 8
+Enter value for node 21: 4
+Node 21 value: 4
+Enter value for node 22: 2
+Node 22 value: 2
+Enter value for node 23: 7
+Node 23 value: 7
+Enter value for node 24: 1
+Node 24 value: 1
+
+SOL => Total sum = 223
+               
+ [~/OS Lab/Assignment_07]
+ harshith   master - bzr@1 ✚   make run
+gcc -shared -Wall -o libfoothread.so foothread.o
+gcc -Wall -g -Wl,-rpath=. -I. -L. -o computesum computesum.c -lfoothread
+./computesum
+Reading values for leaf nodes:
+Enter value for node 0: 125
+Node 0 value: 125
+Enter value for node 4: 45
+Node 4 value: 45
+Enter value for node 7: 78
+Node 7 value: 78
+Enter value for node 10: 68
+Node 10 value: 68
+Enter value for node 11: 425
+Node 11 value: 425
+Enter value for node 12: 123
+Node 12 value: 123
+Enter value for node 15: 756
+Node 15 value: 756
+Enter value for node 16: 42
+Node 16 value: 42
+Enter value for node 18: 58
+Node 18 value: 58
+Enter value for node 19: 96
+Node 19 value: 96
+Enter value for node 20: 12
+Node 20 value: 12
+Enter value for node 21: 457
+Node 21 value: 457
+Enter value for node 22: 757
+Node 22 value: 757
+Enter value for node 23: 21
+Node 23 value: 21
+Enter value for node 24: 24
+Node 24 value: 24
+
+SOL => Total sum = 3087
+               
+ [~/OS Lab/Assignment_07]
+ harshith   master - bzr@1 ✚   
+
