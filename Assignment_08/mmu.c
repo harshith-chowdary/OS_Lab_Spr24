@@ -27,7 +27,7 @@
 
 #define PAGE_FAULT -1
 #define INVALID_PAGE_NUMBER -2
-#define PROCESS_DONE -3
+#define PROCESS_DONE -9
 
 typedef struct {
     bool valid;
@@ -77,6 +77,7 @@ int page_fault_handler(int id, int page_number);
 void free_pages(int id);
 
 int * page_faults;
+int * invalid_page_references;
 FILE * result;
 int time_stamp = 0;
 
@@ -133,6 +134,8 @@ void serve_request() {
         // fprintf(result, "MMU: Invalid Page Number => Process ID: %d, Page Number: %d\n", id, page_number);
         fprintf(result, "INVALID Page Reference : ( %d, %d )\n\n", id, page_number);
 
+        invalid_page_references[id]++;
+
         send_reply(id, INVALID_PAGE_NUMBER);
 
         free_pages(id);
@@ -186,9 +189,11 @@ int main (int argc, char *argv[]) {
     msgq3id = atoi(argv[7]);
 
     page_faults = (int *) malloc(sizeof(int) * k);
+    invalid_page_references = (int *) malloc(sizeof(int) * k);
 
     for(int i = 0; i < k; i++) {
         page_faults[i] = 0;
+        invalid_page_references[i] = 0;
     }
 
     result = fopen("result.txt", "w");
@@ -205,12 +210,12 @@ int main (int argc, char *argv[]) {
     printf("Page Faults => \n");
     printf("Process ID\tPage Faults\n");
 
-    fprintf(result, "Page Faults => \n");
-    fprintf(result, "Process ID\tPage Faults\n");
+    fprintf(result, "\nPage Faults => \n");
+    fprintf(result, "Process ID\tPage Faults\tINVALID Page Ref\n");
 
     for(int i = 0; i < k; i++) {
-        printf("%d\t\t%d\n", i, page_faults[i]);
-        fprintf(result, "%d\t\t\t%d\n", i, page_faults[i]);
+        printf("%d\t\t%d\t\t%d\n", i, page_faults[i], invalid_page_references[i]);
+        fprintf(result, "%d\t\t\t%d\t\t\t%d\n", i, page_faults[i], invalid_page_references[i]);
     }
 
     printf("\n_._._._._._._._._._._._._._._.__._._._._._._._._._._._._._._._\n");
@@ -218,8 +223,9 @@ int main (int argc, char *argv[]) {
 
     fclose(result);
 
+    sleep(60);
+
     printf("\nMMU: Exiting !!!\n");
-    sleep(30);
     exit(1);
     return 0; 
 }

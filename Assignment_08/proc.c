@@ -25,7 +25,7 @@
 
 #define PAGE_FAULT -1
 #define INVALID_PAGE_NUMBER -2
-#define PROCESS_DONE -3
+#define PROCESS_DONE -9
 
 int page_number[MAX_PAGES];
 int total_pages;

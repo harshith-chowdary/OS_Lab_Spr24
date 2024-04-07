@@ -47,7 +47,7 @@ typedef struct {
 #define MSGQ2_KEY 1028
 #define MSGQ3_KEY 1029
 
-#define INVALID_PAGE_PROBABILITY 0.05
+#define INVALID_PAGE_PROBABILITY 0.02
 
 int k, m, f;
 
